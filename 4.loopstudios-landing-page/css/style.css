@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+/* ----------------------------Utilities----------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Alata", sans-serif;
+}
+header {
+  background-image: url(../images/desktop/image-hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  color: hsl(0, 0%, 100%);
+}
+header::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 998px;
+  height: 100%;
+  margin: 0 auto;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0 120px 0;
+}
+.logo {
+  width: 250px;
+  height: 35px;
+}
+ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 25px;
+}
+ul li a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  position: relative;
+}
+ul li a::after {
+  content: "";
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+ul li:hover a::after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+  opacity: 1;
+  position: absolute;
+  top: 25px;
+  left: 13px;
+  cursor: pointer;
+}
+h1 {
+  font-weight: 400;
+  font-size: 70px;
+  text-transform: uppercase;
+  border: 1px solid hsl(0, 0%, 100%);
+  width: 60%;
+  padding: 40px 50px;
+}
+h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 0%);
+}
+h1,
+h2,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+}
+/* ----------------------------Hamberger Menu----------------------------*/
+.hamburger,
+#checkbox {
+  display: none;
+}
+#header.overlay {
+  background: hsl(0, 0%, 0%);
+  width: 100%;
+  height: 100vh;
+}
+#mobile-nav {
+  display: none;
+}
+/* ----------------------------Main----------------------------*/
+main {
+  display: flex;
+  max-width: 998px;
+  margin: 10rem auto;
+}
+
+main .left {
+  width: 60%;
+}
+main .left img.vr {
+  width: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 70% 40%, 70% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 70% 40%, 70% 100%, 0 100%);
+}
+main .right {
+  width: 40%;
+  transform: translateX(-30%) translateY(50%);
+}
+
+main .right p {
+  margin-top: 40px;
+  color: hsl(0, 0%, 55%);
+  font-size: 14px;
+  line-height: 1.4rem;
+}
+
+/* ----------------------------Section----------------------------*/
+
+section {
+  max-width: 998px;
+  margin: 10rem auto;
+}
+section .heading a,
+.down_button {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: hsl(0, 0%, 0%);
+  border: 2px solid hsl(0, 0%, 0%);
+  border-radius: 5px;
+  width: 155px;
+  padding: 13px;
+
+  transition: all 0.7s ease;
+}
+section .heading a:hover,
+.down_button:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 0%);
+}
+section .boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+section .boxes .box {
+  position: relative;
+}
+section .boxes .box img {
+  filter: brightness(0.5);
+  transition: opacity 0.5s ease;
+  width: 100%;
+}
+section .boxes .box:hover img {
+  cursor: pointer;
+  opacity: 0.4;
+}
+section .boxes .box:hover h3 {
+  color: hsl(0, 0%, 0%);
+}
+section .boxes .box h3 {
+  color: hsl(0, 0%, 100%);
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 36px;
+}
+.down_button {
+  display: none;
+}
+/* ----------------------------Footer----------------------------*/
+footer {
+  background-color: hsl(0, 0%, 0%);
+}
+footer .footer-container {
+  padding: 3rem 0 1rem 0;
+  max-width: 998px;
+  margin: auto;
+}
+footer .footer-container .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+footer .footer-container .row .icons {
+  display: inline-flex;
+}
+footer .footer-container .row .icons .icon {
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+}
+footer .footer-container .row .icon::after {
+  content: "";
+  width: 105%;
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+  opacity: 0;
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  transition: opacity 0.5s ease;
+}
+
+footer .footer-container .row .icon:hover::after {
+  content: "";
+  opacity: 1;
+  position: absolute;
+}
+footer .footer-container .row .copy {
+  color: hsl(0, 0%, 55%);
+}
+/* ----------------------------Media Queries----------------------------*/
+@media (max-width: 997px) {
+  header {
+    background-image: url(../images/mobile/image-hero.jpg);
+    padding: 0 2rem;
+  }
+  h1 {
+    font-size: 40px;
+    width: 100%;
+    padding: 30px;
+    margin: 40px auto;
+  }
+  .logo {
+    width: 150px;
+  }
+  main {
+    flex-direction: column;
+    text-align: center;
+    margin: 10rem 2rem;
+  }
+  main .left,
+  main .right {
+    width: 100%;
+  }
+  main .right {
+    margin-top: 40px;
+    transform: translate(0);
+  }
+  main .left img.vr {
+    clip-path: none;
+  }
+  section {
+    margin: 0 2rem 10rem 2rem;
+  }
+  section .heading a {
+    display: none;
+  }
+  section .boxes {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 300px);
+  }
+  section .boxes .box img {
+    height: 100%;
+  }
+  .down_button {
+    margin-top: 3rem;
+    display: inline-block;
+  }
+  footer .footer-container .row {
+    flex-direction: column;
+  }
+  footer .footer-container .row .icons {
+    margin-top: 35px;
+  }
+  /* ----------------------------Hamberger MENU----------------------------*/
+
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url(../images/icon-hamburger.svg);
+  }
+  #desk-nav {
+    display: none;
+  }
+  #checkbox {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    width: 24px;
+    height: 20px;
+    cursor: pointer;
+  }
+  #mobile-nav.show {
+    display: block;
+  }
+  #mobile-nav.show ul li {
+    display: block;
+    margin-bottom: 30px;
+    margin-left: 10px;
+  }
+  #checkbox:checked ~ .hamburger {
+    background-image: url(../images/icon-close.svg);
+    background-repeat: no-repeat;
+  }
+
+  nav#bottom-nav {
+    margin-bottom: 25px;
+  }
+  nav#bottom-nav ul li {
+    display: block;
+    margin: 20px auto;
+  }
+}
