@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+/*-----------------------------Utilities-----------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: hsl(0, 0%, 95%);
+  font-family: "Lexend Deca", sans-serif;
+}
+h1 {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 95%);
+  margin: 30px 0;
+}
+p {
+  font-size: 13px;
+  line-height: 22px;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+a {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 12px;
+  background: white;
+  border: 2px solid transparent;
+  text-decoration: none;
+  padding: 10px 30px;
+  display: inline-block;
+  margin: 60px 0 30px 0;
+  border-radius: 25px;
+  transition: all 0.5s ease;
+}
+main {
+  max-width: 800px;
+  margin: auto;
+  height: 100vh;
+}
+/*-----------------------------Cards-----------------------------*/
+
+main .boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+main .boxes .card {
+  padding: 30px 3rem 30px 40px;
+}
+main .boxes .card .icon img {
+  width: 60px;
+}
+.sedans {
+  background-color: hsl(31, 77%, 52%);
+}
+.sedans a {
+  color: hsl(31, 77%, 52%);
+}
+.sedans a:hover {
+  background-color: hsl(31, 77%, 52%);
+  color: white;
+  border-color: white;
+}
+.suvs {
+  background-color: hsl(184, 100%, 22%);
+}
+.suvs a {
+  color: hsl(184, 100%, 22%);
+}
+.suvs a:hover {
+  background-color: hsl(184, 100%, 22%);
+  color: white;
+  border-color: white;
+}
+.luxury {
+  background-color: hsl(179, 100%, 13%);
+}
+
+.luxury a {
+  color: hsl(179, 100%, 13%);
+}
+.luxury a:hover {
+  background-color: hsl(179, 100%, 13%);
+  color: white;
+  border-color: white;
+}
+
+/*-----------------------------Media Queries-----------------------------*/
+
+@media (max-width: 815px) {
+  main {
+    height: auto;
+    margin: 4rem;
+  }
+  main .boxes {
+    flex-direction: column;
+    height: auto;
+  }
+}
