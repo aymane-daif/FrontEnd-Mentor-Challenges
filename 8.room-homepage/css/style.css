@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+/*-------------------------------Utilities-------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Spartan", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+/*-------------------------------Layout-------------------------------*/
+main {
+  display: grid;
+  grid-template-columns: repeat(7, calc(100vw / 7));
+  grid-template-rows: repeat(3, calc(100vh / 3));
+  height: 100%;
+  width: 100%;
+}
+main header {
+  background-image: url(../images/desktop-image-hero-1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  grid-column: 1/5;
+  grid-row: 1/3;
+}
+main section.slider {
+  grid-column: 5/8;
+  grid-row: 1/3;
+}
+main section.dark {
+  grid-column: 1/3;
+}
+main section.subhead {
+  grid-column: 3/6;
+  margin: 55px 45px;
+}
+main section.light {
+  grid-column: 6/8;
+}
+main section.dark img,
+main section.light img {
+  width: 100%;
+}
+/*-------------------------------Header-------------------------------*/
+main header .heading {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  margin: 1.5rem auto;
+  height: 40px;
+}
+main header .heading .logo {
+  width: 60px;
+  margin-right: 5rem;
+}
+main header .heading .logo img {
+  width: 100%;
+}
+main header .heading nav ul li {
+  display: inline-block;
+  margin-right: 25px;
+}
+main header .heading nav ul li a {
+  font-family: "Spartan", sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: hsl(0, 0%, 100%);
+  position: relative;
+}
+
+main header .heading nav ul li a::after {
+  content: "";
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+main header .heading nav ul li:hover a::after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+  opacity: 1;
+  position: absolute;
+  top: 25px;
+  left: 25%;
+  cursor: pointer;
+}
+/*-------------------------------Slider-------------------------------*/
+main section.slider .content {
+  margin-left: 5rem;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main section.slider .content h1 {
+  font-size: 30px;
+  color: hsl(0, 0%, 0%);
+}
+main section.slider .content p {
+  font-size: 10px;
+  color: hsl(0, 0%, 63%);
+  line-height: 15px;
+  margin: 1.6rem 0 1.9rem 0;
+}
+main section.slider .content a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  word-spacing: 4px;
+  font-family: "Spartan", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: hsl(0, 0%, 27%);
+  transition: color 0.3s ease;
+}
+main section.slider .content a:hover {
+  color: hsl(0, 0%, 63%);
+}
+main section.slider .content a:hover svg {
+  fill: hsl(0, 0%, 63%);
+}
+main section.slider .content a svg {
+  margin-left: 25px;
+  fill: hsl(0, 0%, 27%);
+  transition: fill 0.3s ease;
+}
+main section.slider .arrows {
+  background-color: hsl(0, 0%, 0%);
+  display: flex;
+  width: 125px;
+  height: 60px;
+  margin-top: -60px;
+}
+main section.slider .arrows #left {
+  border-right: 1px solid hsla(0, 0%, 63%, 0.3);
+}
+main section.slider .arrows #left,
+main section.slider .arrows #right {
+  cursor: pointer;
+  width: 50%;
+  transition: background-color 0.5s ease;
+}
+main section.slider .arrows #left:hover,
+main section.slider .arrows #right:hover {
+  background-color: hsla(0, 0%, 63%, 0.7);
+}
+main section.slider .arrows #left svg,
+main section.slider .arrows #right svg {
+  transform: translateY(70%) scale(0.9);
+  margin-left: 35%;
+}
+/*-------------------------------SubHead-------------------------------*/
+main section.subhead h3 {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: hsl(0, 0%, 0%);
+}
+main section.subhead p {
+  margin-top: 20px;
+  font-size: 10px;
+  color: hsl(0, 0%, 63%);
+  line-height: 17px;
+}
+/*-------------------------------hamburger-------------------------------*/
+main header .heading .hamburger {
+  display: none;
+}
+
+/*-------------------------------Media Queries-------------------------------*/
+
+@media (max-width: 1024px) {
+  body {
+    height: auto;
+  }
+  main {
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: 100%;
+  }
+  main header {
+    grid-column: auto;
+    grid-row: 1/3;
+  }
+
+  main section.slider {
+    grid-row: 3/5;
+    grid-column: auto;
+  }
+
+  main section.dark {
+    grid-column: auto;
+    grid-row: 5/7;
+  }
+  main section.subhead {
+    grid-column: auto;
+    grid-row: 7/8;
+  }
+
+  main section.light {
+    grid-column: auto;
+    grid-row: 8/10;
+  }
+  main section.dark img,
+  main section.light img {
+    height: 100%;
+  }
+  main header .heading .logo {
+    margin: auto;
+  }
+  main header .heading nav {
+    display: none;
+  }
+  /**/
+  main header .heading .hamburger {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+  main header .heading .hamburger img {
+    width: 100%;
+    height: 100%;
+  }
+
+  main header .heading .hamburger #checkbox {
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    opacity: 0;
+  }
+  .show {
+    display: inline-block;
+  }
+  .hide {
+    display: none;
+  }
+  main header .show-nav {
+    background: hsl(0, 0%, 100%);
+    padding: 3.5rem 0 3.5rem 3.5rem;
+    margin: 0;
+    width: 100%;
+  }
+  main header .show-nav .logo {
+    display: none;
+  }
+  main header .show-nav nav {
+    display: flex;
+    margin-left: 2rem;
+  }
+  main header .show-nav nav ul li a {
+    color: hsl(0, 0%, 0%);
+  }
+  main header .show-nav nav ul li {
+    margin-right: 8px;
+  }
+}
