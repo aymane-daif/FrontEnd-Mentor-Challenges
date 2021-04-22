@@ -236,6 +236,7 @@ main header .heading .hamburger {
     position: absolute;
     width: 20px;
     opacity: 0;
+    cursor: pointer;
   }
   .show {
     display: inline-block;
