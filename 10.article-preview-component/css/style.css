@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+/*-------------------------General Styling-------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--light-grayish-blue);
+  min-height: 100vh;
+  position: relative;
+}
+h1,
+h5 {
+  color: var(--dark-grayish-blue);
+}
+p {
+  color: var(--desaturated-blue);
+}
+small {
+  color: var(--grayish-blue);
+}
+/*-------------------------Layout Styling-------------------------*/
+main {
+  display: flex;
+  background-color: #fff;
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgb(72 85 106 / 19%), 0 6px 6px rgb(72 85 106 / 23%);
+}
+main .left {
+  width: 40%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+main .right {
+  padding: 30px 50px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/*-------------------------Left Side Styling-------------------------*/
+main .left img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+/*-------------------------Right Side Styling-------------------------*/
+main .right h1 {
+  font-size: 21px;
+}
+main .right p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 15px 0 30px;
+}
+main .right .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+main .info .info-author {
+  display: flex;
+  align-items: center;
+}
+main .right .info .info-author img.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+main .right .info .share {
+  background-color: var(--light-grayish-blue);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+main .right .info .share:hover {
+  background-color: var(--desaturated-blue);
+}
+main .right .info .share:hover path {
+  fill: #fff;
+}
+/*-------------------------Socials POP UP STYLING-------------------------*/
+.socials {
+  background-color: var(--dark-grayish-blue);
+  position: absolute;
+  top: 150px;
+  right: -33px;
+  z-index: 10;
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+.socials::after {
+  content: "";
+
+  position: absolute;
+  top: 98%;
+  left: 50%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--dark-grayish-blue);
+}
+.socials h4 {
+  color: var(--light-grayish-blue);
+  letter-spacing: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  margin-right: 20px;
+}
+.socials div img:not(:last-child) {
+  margin-right: 13px;
+}
+.visible {
+  display: flex;
+}
+.invisible {
+  display: none;
+}
+/*-------------------------Media Queries-------------------------*/
+@media (max-width: 1223px) {
+  .socials {
+    top: 200px;
+  }
+}
+@media (max-width: 994px) {
+  main {
+    flex-direction: column;
+    width: 90%;
+  }
+  main .left,
+  main .right {
+    width: 100%;
+  }
+  main .left,
+  main .left img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  main .right {
+    padding: 30px;
+  }
+  main .right h1 {
+    font-size: 16px;
+  }
+  main .right p {
+    font-size: 13px;
+  }
+
+  .socials {
+    position: relative;
+    top: -48px;
+    left: 0;
+  }
+  main .right .info .share {
+    margin-right: 10px;
+    padding: 6px;
+    position: relative;
+    z-index: 1000;
+  }
+}
