@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+/*---------------------General Styling---------------------*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: hsl(270, 20%, 96%);
+}
+svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  cursor: pointer;
+}
+path {
+  fill: none;
+  stroke: #fff;
+}
+/*---------------------Layout Styling---------------------*/
+main {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+main .left,
+main .right {
+  width: 50%;
+}
+/*---------------------Bg Shape Styling---------------------*/
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  background-image: linear-gradient(to bottom, #c841ff, #923afe);
+  width: 35%;
+  height: 90%;
+  z-index: -1;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+/*---------------------Left Side Styling---------------------*/
+main .left {
+  position: relative;
+}
+main .left .phone-shape {
+  background: hsl(0, 0%, 100%);
+  width: 55%;
+  transform: translateX(50%) scale(0.7);
+  border-radius: 40px;
+  padding: 10px;
+}
+main .left .phone-shape .phone-heading {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    to left,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  padding: 25px 10px 15px 10px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+main .left .phone-shape .phone-heading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 22px;
+  background-color: #fff;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+main .left .phone-shape .phone-heading div:first-child {
+  display: flex;
+  align-items: center;
+}
+main .left .phone-shape .phone-heading .avatar {
+  display: flex;
+  align-items: center;
+}
+main .left .phone-shape .phone-heading .avatar h5 {
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 5px;
+}
+main .left .phone-shape .phone-heading .avatar h6 {
+  color: hsl(276, 100%, 81%);
+}
+main .left .phone-shape .phone-heading .avatar img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 0 10px;
+}
+main .left .phone-shape .conversation {
+  background-color: hsl(270, 20%, 96%);
+  padding: 10px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+main .left .phone-shape .conversation .message {
+  width: 60%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 12px;
+  box-shadow: 0 1px 6px hsl(271deg 36% 24% / 20%),
+    0 1px 6px hsl(271deg 36% 24% / 10%);
+}
+main .left .phone-shape .conversation .message:nth-child(2),
+main .left .phone-shape .conversation .message:nth-child(5) {
+  margin-bottom: 35px;
+}
+main .left .phone-shape .conversation .receive {
+  color: hsl(276, 55%, 52%);
+  background-color: #ede4f5;
+}
+main .left .phone-shape .conversation .send {
+  color: hsl(271, 15%, 43%);
+  background-color: hsl(0, 0%, 100%);
+  margin-left: auto;
+}
+main .left .phone-shape .conversation .images {
+  display: flex;
+  margin: 12px;
+  justify-content: flex-end;
+}
+main .left .phone-shape .conversation .images div img {
+  width: 55px;
+  height: 55px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+main .left .phone-shape .conversation .offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    to right,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  color: #fff;
+  padding: 15px;
+  width: 70%;
+}
+main .left .phone-shape .conversation .message p {
+  font-size: 13px;
+}
+main .left .phone-shape .conversation .offer div {
+  display: flex;
+  align-items: center;
+}
+main .left .phone-shape .conversation .offer div p {
+  font-size: 11px;
+  margin-left: 10px;
+}
+main .left .phone-shape .conversation form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+main .left .phone-shape .conversation input {
+  display: inline-block;
+  margin: 10px;
+  width: 90%;
+  padding: 13px 15px;
+  border-radius: 25px;
+  border: 1px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+main .left .phone-shape .conversation input::placeholder {
+  color: hsl(206, 6%, 79%);
+}
+main .left .phone-shape .conversation form div {
+  position: absolute;
+  top: 25%;
+  right: 25px;
+}
+main .left .phone-shape .conversation form div svg {
+  background-color: hsl(271, 36%, 24%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 6px;
+}
+/*---------------------Right Side Styling---------------------*/
+main .right h1 {
+  font-size: 38px;
+  font-weight: 500;
+  color: hsl(271, 36%, 24%);
+}
+main .right p {
+  width: 63%;
+  line-height: 1.5;
+  font-size: 15px;
+  margin: 20px 0;
+  color: hsl(270, 7%, 64%);
+}
+/*---------------------Media Queries---------------------*/
+
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
+  main .left,
+  main .right {
+    width: 100%;
+  }
+
+  main .left {
+    padding-top: 40px;
+  }
+  main .left .phone-shape {
+    width: 80%;
+    transform: translateX(0) scale(1);
+    margin: auto;
+  }
+  main .left .phone-shape .conversation .offer {
+    width: 80%;
+  }
+
+  main .right {
+    padding: 20px;
+  }
+  main .right h1 {
+    text-align: center;
+    margin-top: 40px;
+  }
+  main .right p {
+    width: 100%;
+    text-align: center;
+  }
+}
