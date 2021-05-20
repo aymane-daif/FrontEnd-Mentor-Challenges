@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap");
+
+:root {
+  /*Dark Theme*/
+  --bg-img: url("../images/bg-desktop-dark.jpg");
+  --bg-color: hsl(235, 21%, 11%);
+  --heding-color: hsl(0, 0%, 98%); /*static*/
+  --bright-blue: hsl(220, 98%, 61%); /*static*/
+  --todos-bg: hsl(235, 24%, 19%);
+  --muted: hsl(234, 11%, 52%);
+  --hover-color: hsl(236, 33%, 92%);
+  --text-primary: hsl(234, 39%, 85%);
+  --text-secondary: hsl(233, 11%, 84%);
+  --text-dashed: hsl(234, 11%, 52%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+  height: 100%;
+  color: var(--text-primary);
+}
+li {
+  list-style: none;
+}
+.muted {
+  color: var(--muted);
+}
+li.active {
+  color: var(--bright-blue);
+}
+li.highlighted {
+  color: var(--hover-color);
+}
+img {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 550px;
+  width: 100%;
+  margin: auto;
+}
+main {
+  min-height: 100vh;
+}
+main .top {
+  transition: background-image 0.2s ease-in-out;
+  background-image: var(--bg-img);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45vh;
+}
+main .top .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4rem;
+  color: var(--heding-color);
+}
+main .bottom {
+  transition: background-color 0.2s ease-in-out;
+  background-color: var(--bg-color);
+  min-height: calc(100vh - 45vh);
+  height: 100%;
+}
+main .bottom .todos-wrapper {
+  transform: translateY(-7rem);
+}
+
+main .bottom .todos-wrapper form,
+main .bottom .todos-wrapper div {
+  transition: background-color 0.2s ease-in-out;
+  background-color: var(--todos-bg);
+}
+main .bottom .todos-wrapper form {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+main .bottom .todos-wrapper form input {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  padding: 20px 25px;
+  background-color: transparent;
+  color: var(--text-primary);
+  caret-color: var(--bright-blue);
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: inherit;
+}
+main .bottom .todos-wrapper form input::placeholder {
+  color: var(--text-dashed);
+}
+main .bottom .todos-wrapper .todos ul li,
+main .bottom .todos-wrapper .todos ul li div {
+  display: flex;
+  align-items: center;
+}
+main .bottom .todos-wrapper .todos {
+  border-radius: 8px;
+  overflow: hidden;
+}
+main .bottom .todos-wrapper .todos ul li {
+  padding: 15px;
+  border-bottom: 1px solid var(--text-dashed);
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+main .bottom .todos-wrapper .todos ul li:hover .check {
+  border-color: var(--bright-blue);
+}
+main .bottom .todos-wrapper .todos ul li .check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  margin-right: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+main .bottom .todos-wrapper .todos ul li div h3 {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+main .bottom .todos-wrapper .todos ul li.completed div h3 {
+  text-decoration: line-through;
+  color: var(--text-dashed);
+}
+main .bottom .todos-wrapper .todos ul li.completed .check .bg-check {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-image: url(../images/icon-check.svg),
+    linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  border-radius: 50%;
+}
+main .bottom .todos-wrapper .todos ul li img.cross {
+  width: 13px;
+  height: 13px;
+  margin-right: 10px;
+}
+main .bottom .todos-wrapper .todos ul li img.cross:hover {
+  transform: scale(1.5);
+}
+
+main .bottom .todos-wrapper .todos .footer {
+  display: none;
+  justify-content: space-between;
+  padding: 18px;
+}
+main .bottom .todos-wrapper .todos .footer.show {
+  display: flex;
+}
+
+main .bottom .todos-wrapper .todos .footer .filter {
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+}
+main .bottom .todos-wrapper .todos .footer .filter li {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+main .bottom .todos-wrapper .todos .footer .filter li:not(:last-child) {
+  margin-right: 16px;
+}
+main .bottom .todos-wrapper .todos .footer .clear {
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+main .bottom .todos-wrapper .todos .footer .clear:hover {
+  color: var(--hover-color);
+}
+main .bottom .todos-wrapper p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 2rem;
+}
+main .bottom .todos-wrapper form,
+main .bottom .todos-wrapper .todos {
+  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+}
+
+@media (max-width: 560px) {
+  .container {
+    max-width: 90vw;
+  }
+}
