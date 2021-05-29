@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <div class="overlay" id="overlay"></div>
+    <main id="main">
+      <header class="header container">
+        <div class="left">
+          <img src="./images/logo.svg" alt="logo" class="logo" />
+        </div>
+        <div class="right">
+          <div class="score-bg">
+            <p>SCORE</p>
+            <h3 id="current_score">0</h3>
+          </div>
+        </div>
+      </header>
+      <section class="choices container" id="choices">
+        <img src="./images/bg-triangle.svg" alt="triangle" class="triangle" />
+        <div class="choice paper" id="paper">
+          <img src="./images/icon-paper.svg" alt="paper" />
+        </div>
+        <div class="choice scissors" id="scissors">
+          <img src="./images/icon-scissors.svg" alt="scissors" />
+        </div>
+        <div class="choice rock" id="rock">
+          <img src="./images/icon-rock.svg" alt="rock" />
+        </div>
+      </section>
+      <footer id="footer">
+        <button id="rules">RULES</button>
+      </footer>
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <h3>RULES</h3>
+          <img src="./images/icon-close.svg" alt="close" id="close" />
+        </div>
+        <div class="modal-body">
+          <img src="./images/image-rules.svg" alt="rules" />
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>

@@ -25,7 +25,7 @@ function updateTheme(theme, img) {
     img.setAttribute("alt", "icon-sun");
     localStorage.setItem("theme", theme);
 
-    bgImg = "url('../images/bg-desktop-dark.jpg')";
+    bgImg = "url(../images/bg-desktop-dark.jpg)";
     bgColor = "hsl(235, 21%, 11%)";
     todosBg = " hsl(235, 24%, 19%)";
     muted = "hsl(234, 11%, 52%)";
@@ -38,7 +38,7 @@ function updateTheme(theme, img) {
     img.setAttribute("alt", "icon-moon");
     localStorage.setItem("theme", theme);
 
-    bgImg = "url('../images/bg-desktop-light.jpg')";
+    bgImg = "url(../images/bg-desktop-light.jpg)";
     bgColor = " hsl(0, 0%, 98%)";
     todosBg = " hsl(0, 0%, 98%)";
     muted = "hsl(250, 3%, 63%)";

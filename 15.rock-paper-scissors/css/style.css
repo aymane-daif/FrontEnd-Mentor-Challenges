@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap");
+/*---------------------General Styling---------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+main {
+  position: relative;
+}
+h3 {
+  color: hsl(229, 25%, 31%);
+  font-weight: 700;
+  font-size: 30px;
+}
+.container {
+  max-width: 780px;
+  width: 100%;
+  margin: auto;
+}
+/*---------------------Header Styling---------------------*/
+header.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem auto;
+  padding: 1rem 2rem;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+}
+header.header .logo {
+  width: 130px;
+  height: auto;
+}
+header.header .right .score-bg {
+  background-color: #fafafa;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+header.header .right .score-bg p {
+  color: hsl(229, 64%, 46%);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+/*---------------------CHOICES Styling---------------------*/
+section.choices {
+  position: relative;
+  height: 20vh;
+  margin: 20vh auto;
+}
+section.choices .triangle {
+  margin-top: 4rem;
+  width: 250px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+section.choices .choice {
+  background-color: #dfdfdf;
+  display: inline-block;
+  padding: 1.5rem;
+  border-radius: 50%;
+  border: 15px solid transparent;
+  cursor: pointer;
+}
+section.choices .choice:hover {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+section.choices .choice.paper {
+  border-color: hsl(230, 89%, 62%);
+  position: absolute;
+  top: -40%;
+  left: 30%;
+}
+section.choices .choice.scissors {
+  border-color: hsl(39, 89%, 49%);
+  position: absolute;
+  top: -40%;
+  right: 30%;
+}
+section.choices .choice.rock {
+  border-color: hsl(349, 71%, 52%);
+  position: absolute;
+  top: 100%;
+  left: 41%;
+}
+section.choices .choice img {
+  width: 45px;
+  height: 50px;
+}
+/*---------------------Footer Styling---------------------*/
+footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10rem 3rem 2rem 3rem;
+}
+footer button {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.7rem 1.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/*---------------------CHOICES Styling(After picking hand)---------------------*/
+section.choices.choosen {
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+section.choices.choosen h1 {
+  color: #fff;
+  letter-spacing: 3px;
+  margin: 0 auto 2rem auto;
+}
+section.choices.choosen h2 {
+  color: #fff;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+section.choices.choosen button {
+  background-color: #fff;
+  color: hsl(229, 25%, 31%);
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  border: none;
+  border-radius: 10px;
+  margin-top: 1.25rem;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+section.choices.choosen button:hover {
+  opacity: 0.95;
+  color: hsl(349, 71%, 52%);
+}
+section.choices .choice.picked {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 2.5rem;
+  pointer-events: none;
+}
+section.choices .choice.picked:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+section.choices .choice.picked img {
+  width: 60px;
+  height: 70px;
+}
+/*---------------------Modal Styling---------------------*/
+.modal {
+  display: none;
+  background-color: #ffffff;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0 10px 20px rgb(255 255 255 / 30%);
+}
+.modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 0rem 2rem;
+}
+.modal .modal-header img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.modal .modal-body {
+  border-top: 1px solid grey;
+  width: 100%;
+}
+.modal .modal-body img {
+  width: 300px;
+  height: auto;
+  margin: 1.5rem auto;
+  display: block;
+}
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/*---------------------Media Queries---------------------*/
+@media (max-width: 650px) {
+  header.header {
+    width: 90%;
+  }
+  section.choices {
+    margin: 25vh auto;
+  }
+
+  section.choices.choosen {
+    flex-direction: column;
+    justify-content: center;
+  }
+  section.choices.choosen .box-1,
+  section.choices.choosen .box-2 {
+    margin-bottom: 4rem;
+  }
+
+  section.choices .choice.paper {
+    top: -50%;
+    left: 10%;
+    transform: translate(-10%, 20%);
+  }
+  section.choices .choice.scissors {
+    top: -50%;
+    left: 80%;
+    right: auto;
+    transform: translate(-80%, 20%);
+  }
+  section.choices .choice.rock {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  footer {
+    justify-content: center;
+    margin: 3rem !important;
+  }
+  section.choices .choice.picked {
+    transform: translate(0, 0);
+    top: auto;
+    left: auto;
+  }
+  .modal {
+    width: 90vw;
+  }
+}
