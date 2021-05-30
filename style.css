@@ -21,6 +21,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+  padding: 0 2rem;
 }
 .design {
   background: #f0f0f0;
@@ -51,4 +52,14 @@ footer a {
 }
 footer i {
   color: #d41b1b;
+}
+@media (max-width: 850px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
