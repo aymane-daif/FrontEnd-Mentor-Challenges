@@ -56,13 +56,12 @@ header.header .right .score-bg p {
 /*---------------------CHOICES Styling---------------------*/
 section.choices {
   position: relative;
-  height: 20vh;
-  margin: 20vh auto;
+  height: 50vh;
+  margin: 0 auto;
 }
 section.choices .triangle {
-  margin-top: 4rem;
   width: 250px;
-  height: auto;
+  height: 230px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -83,20 +82,23 @@ section.choices .choice:hover {
 section.choices .choice.paper {
   border-color: hsl(230, 89%, 62%);
   position: absolute;
-  top: -40%;
+  top: calc(50% - 115px);
   left: 30%;
+  transform: translateY(-50%);
 }
 section.choices .choice.scissors {
   border-color: hsl(39, 89%, 49%);
   position: absolute;
-  top: -40%;
-  right: 30%;
+  top: calc(50% - 115px);
+  left: calc(30% + 230px);
+  transform: translateX(-30%) translateY(-50%);
 }
 section.choices .choice.rock {
   border-color: hsl(349, 71%, 52%);
   position: absolute;
-  top: 100%;
-  left: 41%;
+  top: calc(50% - 115px + 230px);
+  left: calc(50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 section.choices .choice img {
   width: 45px;
@@ -160,8 +162,9 @@ section.choices.choosen button:hover {
 }
 section.choices .choice.picked {
   position: relative;
-  top: 0;
-  left: 0;
+  top: auto;
+  left: auto;
+  transform: translateX(0) translateY(0);
   padding: 2.5rem;
   pointer-events: none;
 }
@@ -222,13 +225,21 @@ section.choices .choice.picked img {
 }
 /*---------------------Media Queries---------------------*/
 @media (max-width: 650px) {
+  section.choices .choice.paper {
+    top: calc(50% - 115px);
+    left: calc(30% - 30px);
+    transform: translateX(-30%) translateY(-50%);
+  }
+  section.choices .choice.scissors {
+    top: calc(50% - 115px);
+    left: calc(30% + 190px);
+    transform: translateX(-30%) translateY(-50%);
+  }
+}
+@media (max-width: 450px) {
   header.header {
     width: 90%;
   }
-  section.choices {
-    margin: 25vh auto;
-  }
-
   section.choices.choosen {
     flex-direction: column;
     justify-content: center;
@@ -239,21 +250,16 @@ section.choices .choice.picked img {
   }
 
   section.choices .choice.paper {
-    top: -50%;
-    left: 10%;
-    transform: translate(-10%, 20%);
+    top: calc(50% - 125px);
+    left: calc(30% - 45px);
+    transform: translateX(-30%) translateY(-50%);
   }
   section.choices .choice.scissors {
-    top: -50%;
-    left: 80%;
-    right: auto;
-    transform: translate(-80%, 20%);
+    top: calc(50% - 125px);
+    left: calc(30% + 250px - 125px);
+    transform: translateX(-30%) translateY(-50%);
   }
-  section.choices .choice.rock {
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
+
   footer {
     justify-content: center;
     margin: 3rem !important;
