@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+/*-----------------------General Styling and Layout-----------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Spartan", sans-serif;
+}
+header {
+  height: 30vh;
+}
+header .bg {
+  background-color: hsl(180, 29%, 50%);
+  background-image: url(../images/bg-header-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+main {
+  background-color: hsl(180, 52%, 96%);
+  padding: 4rem 0;
+}
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: auto;
+}
+/*-----------------------Info Styling-----------------------*/
+main .jobs .job {
+  margin: 3rem 0;
+  padding: 2.5rem 1rem;
+  background-color: #fdfdfd;
+  border-left: 5px solid hsl(180, 29%, 50%);
+  border-radius: 10px;
+  box-shadow: 0 8px 15px -6px hsl(180deg 29% 50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .jobs .job.filtered-tags {
+  display: none;
+  margin-top: -20vh;
+}
+main .jobs .job.filtered-tags .clear {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: hsl(180, 14%, 20%);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+main .jobs .job.filtered-tags .clear:hover {
+  color: hsl(180, 29%, 50%);
+  border-color: hsl(180, 29%, 50%);
+}
+main .jobs .job .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .jobs .job .info .logo img {
+  width: 80px;
+  height: 80px;
+}
+main .jobs .job .info .content {
+  margin-left: 1.5rem;
+}
+main .jobs .job .info .content .info-heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+main .jobs .job .info .content .info-heading h5 {
+  color: hsl(180, 29%, 50%);
+  font-size: 15px;
+  margin-right: 1rem;
+}
+main .jobs .job .info .content .info-heading span {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 5px;
+  padding: 7px 10px;
+  border-radius: 25px;
+  text-transform: uppercase;
+}
+main .jobs .job .info .content .info-heading span.new {
+  background-color: hsl(180, 29%, 50%);
+}
+main .jobs .job .info .content .info-heading span.featured {
+  background-color: hsl(180, 14%, 20%);
+}
+main .jobs .job .info .content .info-body h2 {
+  color: hsl(180, 14%, 20%);
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+main .jobs .job .info .content .info-body h2:hover {
+  color: hsl(180, 29%, 50%);
+}
+main .jobs .job .info .content .info-footer {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  color: hsl(180, 8%, 52%);
+}
+main .jobs .job .info .content .info-footer span {
+  margin-right: 1rem;
+}
+main .jobs .job .info .content .info-footer span.dot {
+  width: 5px;
+  height: 5px;
+  background-color: hsl(180, 8%, 52%);
+  border-radius: 50%;
+}
+/*-----------------------Tags Styling-----------------------*/
+main .jobs .tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .jobs .tags .role,
+main .jobs .tags .level,
+main .jobs .tags .languages span {
+  font-size: 12px;
+  font-weight: 700;
+  background-color: hsl(180, 52%, 96%);
+  color: hsl(180, 29%, 50%);
+  padding: 0.5rem 0.75rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 6px -6px hsl(180deg 29% 50%);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+main .jobs .tags .role:hover,
+main .jobs .tags .level:hover,
+main .jobs .tags .languages span:hover {
+  background-color: hsl(180, 29%, 50%);
+  color: hsl(180, 52%, 96%);
+}
+main .jobs .tags .role.filtered,
+main .jobs .tags .level.filtered,
+main .jobs .tags .languages.filtered span {
+  position: relative;
+  margin-right: 3rem;
+  border-radius: 5px 0 0 5px;
+}
+main .jobs .tags .role.filtered:hover,
+main .jobs .tags .level.filtered:hover,
+main .jobs .tags .languages.filtered span:hover {
+  background-color: hsl(180, 52%, 96%);
+  color: hsl(180, 29%, 50%);
+}
+main .jobs .tags .role.filtered::after,
+main .jobs .tags .level.filtered::after,
+main .jobs .tags .languages.filtered span::after {
+  content: "";
+  background-color: hsl(180, 29%, 50%);
+  background-image: url(../images/icon-remove.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 30px;
+  margin-right: 1rem;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 5px 6px -6px hsl(180deg 29% 50%);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  position: absolute;
+  left: 100%;
+  top: 0%;
+}
+main .jobs .tags .role.filtered:hover::after,
+main .jobs .tags .level.filtered:hover::after,
+main .jobs .tags .languages.filtered span:hover::after {
+  background-color: hsl(180, 14%, 20%);
+}
+/*-----------------------Media Queries-----------------------*/
+@media (max-width: 950px) {
+  main .jobs .job .info {
+    justify-content: flex-start;
+    width: 60%;
+  }
+  main .jobs .tags {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 40%;
+  }
+  main .jobs .tags.filter-container {
+    width: 100%;
+  }
+  main .jobs .tags .role,
+  main .jobs .tags .level,
+  main .jobs .tags .languages {
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 730px) {
+  header .bg {
+    background-image: url(../images/bg-header-mobile.svg);
+  }
+  .container {
+    max-width: 90vw;
+  }
+  main .jobs .job {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    position: relative;
+  }
+
+  main .jobs .job.filtered-tags {
+    margin-top: -26vh;
+    padding: 0.75rem;
+    flex-direction: row;
+    align-items: center;
+  }
+  main .jobs .job .info {
+    width: 100%;
+    padding-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid lightslategray;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  main .jobs .job .info .content {
+    margin-left: 0rem;
+  }
+  main .jobs .job .info .logo img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -10%;
+  }
+
+  main .jobs .tags {
+    width: 100%;
+    padding-top: 1.5rem;
+  }
+  main .jobs .job .info .content .info-footer {
+    font-size: 12px;
+  }
+}
