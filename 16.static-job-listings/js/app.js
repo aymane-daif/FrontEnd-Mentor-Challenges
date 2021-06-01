@@ -71,13 +71,23 @@ getJobs().then((data) => {
             lngArr.push(lang.textContent)
           );
           let existingTags = [role, level, ...lngArr];
-          choosenTags.forEach((el) => {
-            if (!existingTags.includes(el)) {
-              job.style.display = "none";
+
+          let isThere = false;
+          for (let el of choosenTags) {
+            if (existingTags.includes(el)) {
+              isThere = true;
             } else {
-              job.style.display = "flex";
+              isThere = false;
+              break;
             }
-          });
+          }
+
+          if (!isThere) {
+            job.style.display = "none";
+          } else {
+            job.style.display = "flex";
+          }
+          console.log(choosenTags);
         });
       } else {
         initialTags.forEach((job) => {
