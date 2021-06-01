@@ -1,7 +1,7 @@
-//TODO: Add cancel filtered elemenets
 const clear = document.getElementById("clear");
 const jobs = document.getElementById("jobs");
 const filteredTags = document.getElementById("filtered-tags");
+//get jobs from JSON
 const getJobs = async () => {
   let response = await fetch("js/data.json");
   let data = await response.json();
@@ -57,15 +57,36 @@ getJobs().then((data) => {
     });
   });
 
-  // const filtered = document.querySelectorAll(".role.filtered");
-  // filtered.forEach((el) => {
-  //   el.addEventListener("click", (e) => {
-  //     console.log(e.target.textContent);
-  //     choosenTags.splice(choosenTags.indexOf(e.textContent), 1);
-  //     e.target.remove();
-  //   });
-  // });
-
+  filteredTags.firstElementChild.addEventListener("click", (e) => {
+    if (e.target.tagName === "SPAN") {
+      choosenTags.splice(choosenTags.indexOf(e.target.textContent), 1);
+      e.target.remove();
+      if (choosenTags.length !== 0) {
+        initialTags.forEach((job) => {
+          let lngArr = [];
+          let role = job.getElementsByClassName("role")[0].textContent;
+          let level = job.getElementsByClassName("level")[0].textContent;
+          let lng = job.getElementsByClassName("languages")[0].children;
+          lng = Array.from(lng).forEach((lang) =>
+            lngArr.push(lang.textContent)
+          );
+          let existingTags = [role, level, ...lngArr];
+          choosenTags.forEach((el) => {
+            if (!existingTags.includes(el)) {
+              job.style.display = "none";
+            } else {
+              job.style.display = "flex";
+            }
+          });
+        });
+      } else {
+        initialTags.forEach((job) => {
+          job.style.display = "flex";
+          filteredTags.style.display = "none";
+        });
+      }
+    }
+  });
   clear.addEventListener("click", () => {
     filteredTags.style.display = "none";
     choosenTags.length = 0;
