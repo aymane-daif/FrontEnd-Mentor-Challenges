@@ -8,7 +8,7 @@ function setMap(lat, long, city, country) {
   }).addTo(map);
 
   let customIcon = L.icon({
-    iconUrl: "../images/icon-location.svg",
+    iconUrl: "./images/icon-location.svg",
 
     iconSize: [46, 56], // size of the icon
 
