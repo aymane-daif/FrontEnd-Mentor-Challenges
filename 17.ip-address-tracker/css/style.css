@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,700&display=swap");
+/*----------------------------------General Styling----------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+/*----------------------------------header Styling----------------------------------*/
+main .heading .bg {
+  background: url(../images/pattern-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+  position: relative;
+}
+main .heading .bg .header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+main .heading .bg .header-container h1 {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+}
+main .heading .bg .header-container form.input-wrapper {
+  display: flex;
+  margin-top: 1rem;
+}
+main .heading .bg .header-container form.input-wrapper input {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  width: 33vw;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 10px 0 0 10px;
+  font-family: inherit;
+  font-size: 15px;
+  color: hsl(0, 0%, 17%);
+}
+main .heading .bg .header-container form.input-wrapper button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #111;
+  border: none;
+  outline: none;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+main .heading .bg .header-container form.input-wrapper button:hover {
+  background-color: #3f3f3f;
+}
+main .heading .bg .header-container .info {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 3rem 1.75rem;
+  border-radius: 10px;
+  width: 90vw;
+  position: absolute;
+  bottom: -25%;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+}
+main .heading .bg .header-container .info div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: calc(100% / 4);
+}
+
+main .heading .bg .header-container .info div:not(:last-child) {
+  border-right: 1px solid lightslategrey;
+}
+main .heading .bg .header-container .info div h3 {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: hsl(0, 0%, 59%);
+  margin-bottom: 0.5rem;
+}
+main .heading .bg .header-container .info div p {
+  font-size: 18px;
+  font-weight: 500;
+}
+/*----------------------------------map Styling----------------------------------*/
+.map {
+  width: 100vw;
+  height: 60vh;
+}
+/*----------------------------------Media Queries----------------------------------*/
+@media (max-width: 850px) {
+  main .heading .bg .header-container form.input-wrapper input {
+    width: 70vw;
+    font-size: 13px;
+  }
+  main .heading .bg .header-container .info {
+    flex-direction: column;
+    width: calc(60vw + 50px);
+    bottom: -230px;
+    padding: 1rem 0;
+  }
+  main .heading .bg .header-container .info div:not(:last-child) {
+    border-right: none;
+  }
+  main .heading .bg .header-container .info div {
+    padding: 1rem;
+    width: 100%;
+  }
+  .map {
+    height: 80vh;
+  }
+}
