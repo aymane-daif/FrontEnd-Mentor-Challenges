@@ -127,3 +127,8 @@ main .heading .bg .header-container .info div p {
     height: 80vh;
   }
 }
+@media (max-height: 500px) {
+  main .heading .bg .header-container .info {
+    bottom: 230px;
+  }
+}
