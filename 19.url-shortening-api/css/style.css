@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+/*----------------------------------General Styling----------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.logo img {
+  display: flex;
+  width: 100px;
+  height: 26px;
+}
+.container {
+  max-width: 884px;
+  width: 100%;
+  margin: auto;
+  padding: 0 1rem;
+}
+.btn {
+  margin-left: 1rem;
+  background-color: hsl(180, 66%, 49%);
+  color: #fff;
+  border: none;
+  display: inline-block;
+  padding: 0.65rem 1.85rem;
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn:hover {
+  background-color: #9fe1e0;
+  transform: scale(0.98);
+}
+.btn-large {
+  margin: 0;
+  padding: 0.85rem 1.85rem;
+}
+/*----------------------------------heading Styling----------------------------------*/
+header .heading-nav {
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+}
+header .heading-nav nav.nav-desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+nav ul a,
+div a {
+  letter-spacing: 1pt;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 1rem;
+  color: hsl(257, 7%, 63%);
+  transition: color 0.3s ease-in-out;
+}
+nav ul a:hover {
+  color: hsl(255, 11%, 22%);
+}
+header .heading-content {
+  display: flex;
+  align-items: center;
+}
+header .heading-content .left,
+header .heading-content .right {
+  width: 50%;
+}
+header .heading-content .left h1 {
+  font-size: 50px;
+  line-height: 3.75rem;
+  color: hsl(255, 11%, 22%);
+}
+header .heading-content .left p {
+  width: 90%;
+  margin: 1rem 0;
+  color: hsl(257, 7%, 63%);
+}
+header .heading-content .right img {
+  width: 100%;
+}
+header .heading-nav .hamburger {
+  display: none;
+}
+nav.nav-mobile {
+  display: none;
+  background-color: hsl(257, 27%, 26%);
+  color: #fff;
+  padding: 1rem 0;
+  border-radius: 10px;
+  transform: translateX(0%);
+  animation: slide 0.5s ease-in-out;
+}
+nav.nav-mobile.show {
+  display: block;
+}
+nav.nav-mobile ul {
+  flex-direction: column;
+  border-bottom: 1px solid grey;
+  width: 85%;
+  margin: auto;
+  padding: 1.25rem 0;
+}
+nav.nav-mobile ul li {
+  margin: 0.5rem 0;
+}
+nav.nav-mobile ul li a,
+nav.nav-mobile div a {
+  color: #fff;
+}
+nav.nav-mobile ul li a:hover,
+nav.nav-mobile div a:hover {
+  color: hsl(180, 66%, 49%);
+}
+nav.nav-mobile div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+nav.nav-mobile div a {
+  margin-top: 1.5rem;
+}
+nav.nav-mobile div .btn {
+  margin: 1rem auto;
+  width: 85%;
+}
+/*----------------------------------Shorten Styling----------------------------------*/
+main .shorten {
+  background-image: url(../images/bg-shorten-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: hsl(257, 27%, 26%);
+  padding: 3rem 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  transform: translateY(50%);
+}
+main .shorten form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .shorten input {
+  display: inline-block;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  width: 70%;
+  outline: none;
+  font-size: 15px;
+}
+main .shorten .submit {
+  border-radius: 10px;
+  margin-left: 2rem;
+  padding: 1rem 1.85rem;
+}
+/*----------------------------------Links Styling----------------------------------*/
+
+.links .link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: hsl(255, 11%, 22%);
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  box-shadow: 0px 3px 15px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+}
+.links .link .link-right {
+  display: flex;
+  align-items: center;
+}
+.links .link .link-right h5 {
+  color: hsl(180, 66%, 49%);
+}
+.links .link .link-right .copy,
+.links .link .link-right .copied {
+  border-radius: 10px;
+}
+.links .link .link-right .copied {
+  background-color: hsl(257, 27%, 26%);
+}
+/*----------------------------------Statistics Styling----------------------------------*/
+.statistics {
+  padding: 6rem 0 4rem 0;
+  background-color: #f0f1f6;
+}
+.statistics .statistics-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+}
+.statistics .statistics-content h2 {
+  text-align: center;
+  font-size: 40px;
+  color: hsl(255, 11%, 22%);
+}
+.statistics .statistics-content p {
+  width: 60%;
+  margin: 1rem auto;
+  color: hsl(257, 7%, 63%);
+  text-align: center;
+}
+.statistics .statistics-content .boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 4rem 0;
+}
+.statistics .statistics-content .boxes .box {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  position: relative;
+}
+.statistics .statistics-content .boxes .box:nth-child(2) {
+  margin-top: 2rem;
+}
+.statistics .statistics-content .boxes .box:last-child {
+  margin-top: 4rem;
+}
+.statistics .statistics-content .boxes .box:first-child,
+.statistics .statistics-content .boxes .box:nth-child(2) {
+  margin-right: 2rem;
+}
+.statistics .statistics-content .boxes .box .box-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: hsl(257, 27%, 26%);
+  padding: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -15%;
+}
+.statistics .statistics-content .boxes .box img {
+  width: 30px;
+  height: 30px;
+}
+.statistics .statistics-content .boxes .box h5 {
+  margin: 2rem 0 1rem 0;
+  font-size: 20px;
+  color: hsl(255, 11%, 22%);
+}
+.statistics .statistics-content .boxes .box p {
+  width: 100%;
+  margin: 1rem auto;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+/*----------------------------------Boost Styling----------------------------------*/
+.boost {
+  background-image: url(../images/bg-boost-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: hsl(257, 27%, 26%);
+  padding: 3rem 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.boost h2 {
+  color: #fff;
+  font-size: 40px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+/*----------------------------------Footer Styling----------------------------------*/
+footer {
+  background-color: hsl(260, 8%, 14%);
+  padding: 4rem 0;
+}
+footer .footer-content {
+  display: flex;
+}
+footer .footer-content .links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 3rem;
+}
+footer .footer-content .links div h5 {
+  color: #f4f4f4;
+  font-size: 17px;
+  margin-bottom: 1rem;
+}
+footer .footer-content .links div ul li {
+  list-style: none;
+}
+footer .footer-content .links div ul li a {
+  letter-spacing: 1pt;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0.25rem 0;
+  color: #bbb9be;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+footer .footer-content .links div ul li a:hover {
+  color: hsl(180, 66%, 49%);
+}
+footer .footer-content .links div.icons svg {
+  width: 24px;
+  height: 24px;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+footer .footer-content .links div.icons svg path {
+  transition: all 0.3s ease-in-out;
+}
+footer .footer-content .links div.icons svg:hover path {
+  fill: hsl(180, 66%, 49%);
+}
+/*----------------------------------Animations----------------------------------*/
+@keyframes slide {
+  0% {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+/*----------------------------------Media Queries Styling----------------------------------*/
+@media (max-width: 850px) {
+  header .heading-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  header .heading-content .left,
+  header .heading-content .right {
+    width: 100%;
+  }
+  header .heading-content .left {
+    order: 2;
+  }
+  header .heading-content .right {
+    order: 1;
+  }
+  header .heading-content .left p {
+    width: 60%;
+    margin: 1rem auto;
+  }
+  header .heading-content .right img {
+    margin-bottom: 2rem;
+    width: 80%;
+  }
+  .statistics .statistics-content .boxes {
+    flex-wrap: wrap;
+  }
+  .statistics .statistics-content .boxes .box:first-child,
+  .statistics .statistics-content .boxes .box:nth-child(2) {
+    margin-right: auto;
+  }
+  .statistics .statistics-content .boxes .box:last-child {
+    margin-top: 2rem;
+  }
+  .statistics .statistics-content .boxes .box {
+    width: 95%;
+    margin: 1rem auto;
+  }
+  footer .footer-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-content .links {
+    margin: 2rem auto 0 auto;
+    width: 95%;
+  }
+}
+@media (max-width: 650px) {
+  header .heading-nav {
+    justify-content: space-between;
+  }
+  header .heading-nav .hamburger {
+    display: inline-flex;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  header .heading-nav .hamburger:hover {
+    transform: scale(1.3);
+  }
+  header .heading-nav .hamburger img {
+    width: 25px;
+    height: 25px;
+  }
+  header .heading-nav nav.nav-desktop {
+    display: none;
+  }
+  main .shorten {
+    padding: 2rem 0;
+  }
+  main .shorten form {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .shorten input {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+  main .shorten .submit {
+    margin-left: 0;
+    width: 90%;
+  }
+  .boost h2 {
+    font-size: 35px;
+  }
+  footer {
+    padding: 3rem 0;
+  }
+  footer .footer-content .links {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-content .links div {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
