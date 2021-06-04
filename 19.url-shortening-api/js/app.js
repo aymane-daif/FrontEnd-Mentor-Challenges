@@ -1,5 +1,6 @@
 const hamburgerBtn = document.getElementById("hamburger");
 const navMobile = document.getElementById("nav-mobile");
+const errorMsg = document.getElementById("error");
 const linksEl = document.getElementById("links");
 const formEl = document.getElementById("form");
 const linkUrl = document.getElementById("short-link");
@@ -24,29 +25,36 @@ formEl.addEventListener("submit", (e) => {
   e.preventDefault();
   let value = linkUrl.value.trim();
   linkUrl.value = "";
+  if (value === "") {
+    linkUrl.style.border = "2px solid #FF3333";
+    errorMsg.style.visibility = "visible";
+  } else {
+    linkUrl.style.border = "2px solid transparent";
+    errorMsg.style.visibility = "hidden";
 
-  getTodos(value)
-    .then((data) => {
-      addLink(value, data.result.short_link);
+    getTodos(value)
+      .then((data) => {
+        addLink(value, data.result.short_link);
 
-      const copyBtn = document.getElementById("copy");
+        const copyBtn = document.getElementById("copy");
 
-      copyBtn.addEventListener("click", () => {
-        copyBtn.classList.remove("copy");
-        copyBtn.classList.add("copied");
-        copyBtn.textContent = "Copied!";
+        copyBtn.addEventListener("click", () => {
+          copyBtn.classList.remove("copy");
+          copyBtn.classList.add("copied");
+          copyBtn.textContent = "Copied!";
 
-        //copy to the clipboard
-        const textarea = document.createElement("textarea");
-        const shortUrl = document.getElementById("short").textContent;
-        textarea.value = shortUrl;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        textarea.remove();
-      });
-    })
-    .catch((err) => alert(err.message));
+          //copy to the clipboard
+          const textarea = document.createElement("textarea");
+          const shortUrl = document.getElementById("short").textContent;
+          textarea.value = shortUrl;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          textarea.remove();
+        });
+      })
+      .catch((err) => alert(err.message));
+  }
 });
 
 function addLink(url, short) {

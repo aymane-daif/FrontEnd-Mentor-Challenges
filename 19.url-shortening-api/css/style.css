@@ -151,7 +151,7 @@ main .shorten {
   background-position: center;
   background-size: cover;
   background-color: hsl(257, 27%, 26%);
-  padding: 3rem 0;
+  padding: 1.5rem 0;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -161,13 +161,28 @@ main .shorten form {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+main .shorten form div {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 1.75rem;
+}
+main .shorten form div span {
+  font-size: 13px;
+  margin-top: 0.5rem;
+  color: #ff3333;
+  font-style: italic;
+  letter-spacing: 1px;
+  visibility: hidden;
 }
 main .shorten input {
   display: inline-block;
   padding: 1rem 1.25rem;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 10px;
-  width: 70%;
+  width: 100%;
   outline: none;
   font-size: 15px;
 }
@@ -432,6 +447,18 @@ footer .footer-content .links div.icons svg:hover path {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+  }
+  main .shorten form div {
+    width: 100%;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  main .shorten form div span {
+    width: 90%;
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: -0.5rem;
   }
   main .shorten input {
     width: 90%;
