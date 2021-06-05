@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
+/*----------------------------------------General Styling----------------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/pattern-curve.svg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+body.fade {
+  animation: fade 0.3s ease-in-out;
+}
+main {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+/*----------------------------------------Left Side Styling----------------------------------------*/
+main .left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 26px;
+  color: hsl(240, 38%, 20%);
+  background-image: url(../images/pattern-quotes.svg);
+  background-repeat: no-repeat;
+  background-position: 15% top;
+  line-height: 2.25rem;
+}
+main .left .info {
+  margin-top: 2rem;
+  font-size: 16px;
+  display: flex;
+  font-weight: 600;
+}
+main .left .info .name {
+  color: hsl(240, 38%, 20%);
+  margin-right: 1rem;
+}
+main .left .info .job {
+  color: hsl(240, 18%, 77%);
+}
+/*----------------------------------------Right Side Styling----------------------------------------*/
+main {
+  width: 80%;
+  height: 60vh;
+  box-shadow: 0px 3px 15px rgb(0 0 0 / 20%);
+  padding: 0 2rem;
+  background-image: url(../images/pattern-bg.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+main .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  position: relative;
+}
+main .right > img {
+  width: 350px;
+  height: 85%;
+  object-fit: contain;
+  box-shadow: 0px 3px 15px rgb(0 0 0 / 20%);
+}
+main .right .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  position: absolute;
+  top: 88%;
+  left: 20%;
+  background-color: #fff;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0px 3px 15px rgb(0 0 0 / 20%);
+  border-radius: 25px;
+}
+main .right .icons img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*----------------------------------------Media Queries Styling----------------------------------------*/
+@media (max-width: 1024px) {
+  main .left {
+    font-size: 20px;
+  }
+  main .left .info {
+    margin-top: 1rem;
+  }
+  main .right .icons {
+    top: 95%;
+    left: 16%;
+  }
+}
+@media (max-width: 950px) {
+  main {
+    margin: 2rem 0;
+    flex-direction: column;
+    height: auto;
+    padding: 2rem;
+    background-image: none;
+  }
+  main .left {
+    order: 2;
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  main .left .info {
+    flex-direction: column;
+    justify-content: center;
+  }
+  main .right {
+    order: 1;
+    width: 100%;
+  }
+}
