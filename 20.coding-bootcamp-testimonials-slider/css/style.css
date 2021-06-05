@@ -141,3 +141,8 @@ main .right .icons img {
     width: 100%;
   }
 }
+@media (max-width: 650px) {
+  main .right > img {
+    width: 100%;
+  }
+}
