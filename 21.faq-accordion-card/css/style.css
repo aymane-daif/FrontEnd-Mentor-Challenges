@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+/*----------------------------------General Styling----------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 2.75rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 40% 100%;
+}
+::selection {
+  color: #fff;
+  background: hsl(14, 88%, 65%);
+}
+/*----------------------------------Left Side Styling----------------------------------*/
+main .left,
+main .right {
+  width: 50%;
+}
+
+main .left .illustration {
+  position: relative;
+}
+main .left .illustration img {
+  max-width: 100%;
+}
+main .left .illustration img:first-child {
+  width: 450px;
+  height: 300px;
+}
+main .left .illustration img:last-child {
+  width: 130px;
+  position: absolute;
+  top: calc(50% + 0.5rem);
+  left: calc(-130px + -2rem);
+  transform: translateX(130px) translateY(-50%);
+}
+/*----------------------------------Right Side Styling----------------------------------*/
+
+main .right {
+  padding: 0rem 4rem;
+}
+main .right h1 {
+  margin-bottom: 0.5rem;
+}
+main .right .faqs .faq {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #c3c3c3;
+}
+main .right .faqs .faq:last-child {
+  padding-bottom: 0rem;
+  border-bottom: none;
+}
+main .right .faqs .faq .quest {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+main .right .faqs .faq .quest p {
+  color: hsl(237, 12%, 33%);
+  font-size: 15px;
+  transition: color 0.3s ease-in-out;
+}
+main .right .faqs .faq .quest:hover p {
+  color: hsl(14, 88%, 65%);
+}
+main .right .faqs .faq .quest.active img {
+  transform: rotate(180deg);
+}
+main .right .faqs .faq .quest.active p {
+  color: hsl(238, 29%, 16%);
+  font-weight: 700;
+  font-size: 16px;
+}
+main .right .faqs .faq .quest + .ans {
+  display: none;
+  color: hsl(240, 6%, 50%);
+  font-size: 14px;
+}
+main .right .faqs .faq .quest.active + .ans {
+  display: block;
+}
+/*----------------------------------Media Queries Styling----------------------------------*/
+@media (max-width: 980px) {
+  body {
+    padding: 2rem 0;
+  }
+  main {
+    flex-direction: column;
+    background-position: top center;
+    background-size: 80% 50%;
+    width: 70%;
+  }
+  main .left,
+  main .right {
+    width: 100%;
+  }
+  main .left .illustration {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  main .left .illustration img:first-child {
+    width: 300px;
+    height: 300px;
+  }
+  main .left .illustration img:last-child {
+    width: 120px;
+
+    top: auto;
+    left: auto;
+    transform: translateY(12px) translateX(-120px);
+  }
+}
+@media (max-width: 600px) {
+  main {
+    width: 90%;
+    background-size: 70% 45%;
+  }
+  main .left .illustration img:first-child {
+    width: 250px;
+    height: 250px;
+    margin-top: -10%;
+  }
+  main .left .illustration img:last-child {
+    width: 100px;
+    transform: translateY(0px) translateX(-95px);
+  }
+  main .right {
+    padding: 0rem 2rem;
+  }
+  main .right .faqs .faq .quest.active p {
+    font-size: 15px;
+  }
+  main .right .faqs .faq .quest + .ans {
+    font-size: 13px;
+  }
+}
