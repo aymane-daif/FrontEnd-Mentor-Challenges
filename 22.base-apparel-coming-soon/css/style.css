@@ -115,7 +115,7 @@ main .left .wrapper form.error + span {
 /*------------------------------------Right Side Styling------------------------------------*/
 main .right {
   width: 40%;
-  background-image: url(/images/hero-desktop.jpg);
+  background-image: url(../images/hero-desktop.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
