@@ -138,7 +138,7 @@ main .right {
   }
   main .right {
     height: 350px;
-    background-image: url(/images/hero-mobile.jpg);
+    background-image: url(../images/hero-mobile.jpg);
     background-position: top;
   }
   main .left {
