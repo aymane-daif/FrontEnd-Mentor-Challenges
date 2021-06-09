@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/*---------------------------------General Styling---------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(../images/bg-intro-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+body::after {
+  content: "";
+  background-color: #ff7978;
+  position: absolute;
+  top: 0;
+  left: 0;
+  mix-blend-mode: overlay;
+  right: 0;
+  bottom: 0;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  position: relative;
+  z-index: 10;
+}
+
+/*---------------------------------Left Side Styling---------------------------------*/
+main .left {
+  color: #fff;
+  width: 50%;
+}
+main .left h1 {
+  font-size: 41px;
+  line-height: 47px;
+}
+main .left p {
+  font-size: 14px;
+  margin-top: 2rem;
+  width: 80%;
+}
+/*---------------------------------Right Side Styling---------------------------------*/
+main .right {
+  width: 45%;
+}
+main .right .btn {
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+main .right .btn:hover {
+  opacity: 0.9;
+}
+main .right .btn.btn-blue {
+  background-color: hsl(248, 32%, 49%);
+  color: hsl(246, 25%, 77%);
+}
+main .right .btn.btn-blue span {
+  color: #fff;
+}
+main .right form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  padding: 2rem 0.25rem;
+}
+main .right form > * {
+  width: 90%;
+}
+main .right form input {
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ececec;
+  outline: none;
+  font-family: inherit;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+main .right form input:focus {
+  border-color: hsl(248, 32%, 49%);
+}
+main .right form .btn-green {
+  width: 90%;
+  background-color: hsl(154, 59%, 51%);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0.75rem 0;
+}
+main .right form small {
+  font-size: 12px;
+  text-align: center;
+  color: #555;
+}
+main .right form small a {
+  color: hsl(0, 100%, 74%);
+  text-decoration: none;
+  font-family: inherit;
+}
+/*---------------------------------Media Queries Styling---------------------------------*/
+
+@media (max-width: 1124px) {
+  main {
+    width: 90%;
+  }
+  main .right {
+    width: 50%;
+  }
+}
+@media (max-width: 825px) {
+  main {
+    flex-direction: column;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  main .left,
+  main .right {
+    width: 90%;
+  }
+  main .left p {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
