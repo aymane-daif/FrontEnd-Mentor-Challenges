@@ -29,30 +29,42 @@
           <span>Try it free 7 days</span> then $20/mo. thereafter
         </button>
         <form action="">
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="First Name"
-          />
-          <input
-            type="text"
-            name="lasttName"
-            id="lastName"
-            placeholder="Last Name"
-          />
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Email Address "
-          />
-          <input
-            type="password"
-            name="psswd"
-            id="psswd"
-            placeholder="Password"
-          />
+          <div>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="First Name"
+            />
+            <span>First Name cannot be empty</span>
+          </div>
+          <div>
+            <input
+              type="text"
+              name="lasttName"
+              id="lastName"
+              placeholder="Last Name"
+            />
+            <span>Last Name cannot be empty</span>
+          </div>
+          <div>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Email Address "
+            />
+            <span>Looks like this is not an email</span>
+          </div>
+          <div>
+            <input
+              type="password"
+              name="psswd"
+              id="psswd"
+              placeholder="Password"
+            />
+            <span>Password cannot be empty</span>
+          </div>
           <button type="submit" class="btn btn-green">
             Claim your free trial
           </button>
