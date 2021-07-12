@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap");
+/* font-family: "Fraunces", serif;
+font-family: 'Barlow', sans-serif; */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Barlow", sans-serif;
+}
+header {
+  background-image: url(../images/desktop/image-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  height: 100%;
+}
+header .heading-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+header .heading-top nav ul {
+  display: flex;
+}
+header .heading-top nav ul li {
+  margin: 0 1.5rem;
+  list-style: none;
+}
+header .heading-top nav ul li a {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 17px;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+header .heading-top nav ul li:last-child a {
+  text-transform: uppercase;
+  background-color: hsl(0, 0%, 100%);
+  color: #000;
+  font-family: "Fraunces", serif;
+  padding: 1rem 1.75rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+header .heading-top nav ul li:last-child a:hover {
+  background-color: #6fcefe;
+  color: hsl(0, 0%, 100%);
+}
+header .heading-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .heading-main h1 {
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: 5px;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+main .row {
+  display: flex;
+}
+main .row img {
+  width: 100%;
+}
+main .row .left,
+main .row .right {
+  width: 50%;
+}
+
+main .row .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3rem;
+}
+main .row .left div {
+  width: 70%;
+  margin: auto;
+}
+main .row .left h2 {
+  font-family: "Fraunces", serif;
+  color: hsl(212, 27%, 19%);
+  font-size: 40px;
+  margin-bottom: 1.5rem;
+}
+main .row .left p {
+  color: #858591;
+  line-height: 1.75rem;
+  font-weight: 700;
+
+  margin-bottom: 2rem;
+}
+main .row .left button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 18px;
+}
+main .row .left button + .btn-heighlight {
+  display: block;
+  background-color: #fff3bc;
+  width: 140px;
+  height: 11px;
+  border-radius: 25px;
+  margin-top: -10px;
+  position: relative;
+  z-index: -1;
+  transform: translateX(-119%);
+  transition: background-color 0.3s ease-in-out;
+}
+main .row .left button:hover + .btn-heighlight {
+  background-color: #fad50b;
+}
+main .row .left button + .btn-heighlight.pink {
+  background-color: #ffddd7;
+}
+main .row .left button:hover + .btn-heighlight.pink {
+  background-color: #ff7c6a;
+}
+
+section.skills {
+  display: flex;
+  margin-top: -6px;
+}
+section.skills .left,
+section.skills .right {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.skills .left div,
+section.skills .right div {
+  width: 60%;
+  margin-top: 14rem;
+}
+section.skills .left div h3,
+section.skills .right div h3 {
+  font-family: "Fraunces", serif;
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 30px;
+  color: #23554c;
+}
+section.skills .left div p,
+section.skills .right div p {
+  line-height: 24px;
+  color: #23554c;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 1.25rem;
+}
+section.skills .left {
+  background-image: url(../images/desktop/image-graphic-design.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section.skills .right {
+  background-image: url(../images/desktop/image-photography.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem;
+  background-color: #fffbf8;
+}
+section.testimonials h4 {
+  color: #a5a5a5;
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 5px;
+  word-spacing: 0.5rem;
+}
+section.testimonials .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 4rem;
+}
+section.testimonials .wrapper .testimonial {
+  margin-right: 2rem;
+}
+section.testimonials .wrapper .testimonial img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+section.testimonials .wrapper .testimonial p {
+  color: #707176;
+  font-weight: 600;
+  line-height: 1.75rem;
+  margin: 2rem auto;
+}
+section.testimonials .wrapper .testimonial .name span {
+  color: #2b313d;
+  font-family: "Fraunces", serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+section.testimonials .wrapper .testimonial .job span {
+  color: #c9c9c7;
+  font-weight: bold;
+  font-size: 14px;
+}
+section.gallery {
+  display: flex;
+}
+section.gallery img {
+  width: 100%;
+}
+
+footer {
+  background-color: #90d4c5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -6px;
+  padding: 5rem 0;
+}
+footer nav ul {
+  display: flex;
+  margin-top: 2rem;
+}
+footer nav ul li {
+  margin: 0 1.75rem;
+  list-style: none;
+}
+footer nav ul li a {
+  color: #2e7565;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+footer nav ul li a:hover {
+  color: #fff;
+}
+footer .socials {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+footer .socials svg {
+  cursor: pointer;
+}
+footer .socials svg path {
+  transition: fill 0.3s ease-in-out;
+}
+footer .socials svg:hover path {
+  fill: #fff;
+}
+footer .socials svg:not(:last-child) {
+  margin-right: 1.5rem;
+}
