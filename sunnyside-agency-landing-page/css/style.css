@@ -111,7 +111,7 @@ main .row .left button {
   font-weight: 900;
   font-size: 18px;
 }
-main .row .left button + .btn-heighlight {
+main .row .left button .btn-heighlight {
   display: block;
   background-color: #fff3bc;
   width: 140px;
@@ -120,16 +120,15 @@ main .row .left button + .btn-heighlight {
   margin-top: -10px;
   position: relative;
   z-index: -1;
-  transform: translateX(-119%);
   transition: background-color 0.3s ease-in-out;
 }
-main .row .left button:hover + .btn-heighlight {
+main .row .left button:hover .btn-heighlight {
   background-color: #fad50b;
 }
-main .row .left button + .btn-heighlight.pink {
+main .row .left button .btn-heighlight.pink {
   background-color: #ffddd7;
 }
-main .row .left button:hover + .btn-heighlight.pink {
+main .row .left button:hover .btn-heighlight.pink {
   background-color: #ff7c6a;
 }
 
@@ -282,4 +281,88 @@ footer .socials svg:hover path {
 }
 footer .socials svg:not(:last-child) {
   margin-right: 1.5rem;
+}
+
+@media (max-width: 970px) {
+  main .row .left {
+    margin-left: 0rem;
+  }
+  main .row .left h2 {
+    font-size: 30px;
+  }
+  main .row .left p {
+    font-size: 14px;
+  }
+  section.testimonials {
+    padding: 4rem 0;
+  }
+}
+@media (max-width: 827px) {
+  header .heading-main h1 {
+    font-size: 45px;
+  }
+  main .row {
+    flex-direction: column-reverse;
+  }
+  main .row.second-row {
+    flex-direction: column;
+  }
+  main .row img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+  }
+  main .row .left,
+  main .row .right {
+    width: 100%;
+  }
+  main .row .left {
+    padding: 3rem 0;
+  }
+  section.skills {
+    flex-direction: column;
+  }
+  section.skills .left,
+  section.skills .right {
+    width: 100%;
+  }
+}
+@media (max-width: 690px) {
+  header .heading-main h1 {
+    font-size: 30px;
+  }
+  header .heading-top nav {
+    display: none;
+  }
+  section.testimonials .wrapper {
+    flex-direction: column;
+  }
+  section.testimonials .wrapper .testimonial {
+    width: 70%;
+    margin-right: 0;
+  }
+  section.testimonials .wrapper .testimonial:not(:first-child) {
+    margin-top: 6rem;
+  }
+  section.testimonials .wrapper .testimonial p {
+    margin: 1rem auto;
+  }
+  section.testimonials .wrapper .testimonial .name span {
+    margin-top: 0rem;
+  }
+  section.gallery {
+    flex-wrap: wrap;
+  }
+  section.gallery > div {
+    width: 50%;
+  }
+}
+@media (max-width: 560px) {
+  header .heading-main h1 {
+    font-size: 20px;
+  }
+  section.testimonials h4 {
+    font-size: 20px;
+    letter-spacing: 0;
+  }
 }
