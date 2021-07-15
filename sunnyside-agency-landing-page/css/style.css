@@ -52,6 +52,12 @@ header .heading-top nav ul li:last-child a:hover {
   background-color: #6fcefe;
   color: hsl(0, 0%, 100%);
 }
+header .heading-top nav + img {
+  display: none;
+}
+header .heading-top + .nav-mobile {
+  display: none;
+}
 header .heading-main {
   display: flex;
   flex-direction: column;
@@ -331,8 +337,67 @@ footer .socials svg:not(:last-child) {
   header .heading-main h1 {
     font-size: 30px;
   }
+  header .heading-top {
+    padding: 2rem 0;
+    width: 90%;
+    margin: auto;
+  }
   header .heading-top nav {
     display: none;
+  }
+  header .heading-top nav + img {
+    display: block;
+    cursor: pointer;
+  }
+  header .heading-top + .nav-mobile {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  header .heading-top + .nav-mobile.show {
+    display: flex;
+  }
+  header .heading-top + .nav-mobile ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    width: 90%;
+    padding: 1.5rem 0;
+    position: relative;
+  }
+  header .heading-top + .nav-mobile ul::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 30px solid #f4f4f4;
+  }
+  header .heading-top + .nav-mobile ul li {
+    margin: 0.75rem 0;
+  }
+  header .heading-top + .nav-mobile ul li a {
+    font-family: inherit;
+    color: #858591;
+    font-size: 19px;
+    text-decoration: none;
+  }
+  header .heading-top + .nav-mobile ul li:last-child {
+    margin: 2rem 0;
+  }
+  header .heading-top + .nav-mobile ul li:last-child a {
+    font-family: "Fraunces", serif;
+    text-transform: uppercase;
+    background-color: #fbd601;
+    color: #2d2d15;
+    padding: 1rem 1.75rem;
+    border-radius: 25px;
   }
   section.testimonials .wrapper {
     flex-direction: column;
